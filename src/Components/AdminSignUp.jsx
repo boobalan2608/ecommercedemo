@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/AdminSignup.css';
 import axios from 'axios';
 import { toast } from "react-toastify";
@@ -9,6 +9,7 @@ const AdminSignUp = () => {
     let [password, setPassword] = useState("");
     let [name, setName] = useState("");
     let [adminData, setAdminData] = useState({});
+    const navigate = useNavigate();
     let data = { adminName, password, name };
     async function AddAdminData(e) {
         e.preventDefault();
@@ -21,6 +22,7 @@ const AdminSignUp = () => {
         axios.post("https://ecommercedemodata-1.onrender.com/AdminInfo", data)
             .then((res) => {
                 toast.success("Admin Added Successfully")
+                navigate("/adminlogin")
             })
             .catch((err) => {
                 alert(err);

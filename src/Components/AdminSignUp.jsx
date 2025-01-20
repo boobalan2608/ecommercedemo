@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 import '../Styles/AdminSignup.css';
 import axios from 'axios';
@@ -10,29 +10,21 @@ const AdminSignUp = () => {
     let [name, setName] = useState("");
     let [adminData, setAdminData] = useState({});
     let data = { adminName, password, name };
-    useEffect(() => {
-        if (adminName) {
-            axios.get(`https://ecommercedemodata-1.onrender.com/AdminInfo?adminName=${adminName}`)
-                .then((res) => {
-                    setAdminData(res.data);
-                })
-                .catch(() => {
-                    console.log("Data not present");
-                })
+    async function AddAdminData(e) {
+        e.preventDefault();
+        let response = await axios.get(`https://ecommercedemodata-1.onrender.com/AdminInfo?adminName=${adminName}`);
+        setAdminData(response.data);
+        if (response.data && response.data.length > 0) {
+            toast.error("Admin Name already exists.");
+            return;
         }
-    }, [adminName])
-    function AddAdminData() {
-        if (!adminData) {
-            axios.post("https://ecommercedemodata-1.onrender.com/AdminInfo", data)
-                .then((res) => {
-                    toast.success("Admin Added Successfully")
-                })
-                .catch((err) => {
-                    alert(err);
-                })
-        } else {
-            toast.error("Admin Name is already Exisit..")
-        }
+        axios.post("https://ecommercedemodata-1.onrender.com/AdminInfo", data)
+            .then((res) => {
+                toast.success("Admin Added Successfully")
+            })
+            .catch((err) => {
+                alert(err);
+            })
     }
     return (
         <div className="admin-signup">

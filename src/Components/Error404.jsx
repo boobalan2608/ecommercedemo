@@ -2,11 +2,15 @@ import React from 'react'
 import '../Styles/Error404.css';
 export default function Error404() {
     return (
-        <div className='Error-404'>
-            <div className="Error-cont">
-                <h1>404 Error</h1>
-                <span>Page not found..</span>
-            </div>
-        </div>
+        
+        <!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; URL=./index.html" />
+</head>
+<body>
+</body>
+</html>
+
     )
 }

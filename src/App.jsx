@@ -2,7 +2,7 @@ import './App.css';
 import LandingPage from './Components/LandingPage';
 import AdminLogin from './Components/AdminLogin';
 import UserLogin from './Components/UserLogin';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { HashRouter as Router,Routes,Route } from 'react-router-dom';
 import AdminSignUp from './Components/AdminSignUp';
 import UserSignUp from './Components/UserSignUp';
 import AdminHome from './Components/AdminHome';
@@ -14,7 +14,7 @@ import UserHome from './Components/UserHome';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
       <Routes>
         <Route path='/*' element={<Error/>}/>
         <Route path='/' element={<LandingPage/>}/>
@@ -25,7 +25,7 @@ function App() {
         <Route path='/AdminHome/*' element={<AdminHome/>}/>
         <Route path='/UserHome/*' element={<UserHome/>}/>
       </Routes>
-      </BrowserRouter>
+      </Router>
       <ToastContainer/>
     </div>
   );

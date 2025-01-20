@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.admin-login{
+    /* background: linear-gradient(to right,rgb(28, 49, 57),rgb(26, 41, 34),rgb(44, 36, 36)); */
+    background: url("../Images/adminLogin.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    font-family:monospace;
+}
+.admin-login > .admin-title{
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+    top: 170px;
+    color: rgb(86, 0, 0);
+}
+.admin-login-form-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.admin-login-form-cont > .admin-login-form{
+    display: grid;
+    grid-template-columns: 160px 160px;
+    grid-template-rows: 50px 100px;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 0 0 2px black;
+    border-radius: 20px;
+    transition: .1s;
+    transform: scale(1.1);
+    position: relative;
+    background-color: rgba(219, 217, 217, 0.9);
+    
+}
+.admin-login-form:hover{
+    box-shadow: 0 0 10px rgba(198, 180, 180, 0.878);
+}
+.admin-login-form-cont > .admin-login-form > label{
+    color: #5b3101;
+}
+.admin-login-form-cont > .admin-login-form > input::placeholder{
+    color: rgb(85, 73, 73);
+}
+.admin-login-form-cont > .admin-login-form > input{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+    color: rgb(3, 3, 3);
+    padding: 5px;
+}
+.admin-login-form > .submit-btn{
+    border-radius: 10px;
+    padding: 8px 5px;
+    background-color: #536879;
+    border: none;
+    transition: .5s;
+    position: absolute;
+    bottom: 15px;
+    left: 140px;
+    color: rgb(255, 255, 255);
+    padding:10px 40px;
+    box-shadow: 0 0 5px grey;
+}
+.admin-login-form > .submit-btn:hover{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.admin-login > h5{
+    font-size: 15px;
+    color: rgb(255, 0, 0);
+    position: absolute;
+    bottom: 240px;
+    left: 670px;
+}
+.admin-login a{
+    text-decoration: none;
+    transition: .5s;
+    color: #536879;
+}
+.admin-login a:hover{
+    color: rgb(0, 0, 0);
+}
+.admin-login > h5 > .navigate-btn{
+    border: 0;
+    background-color: inherit;
+}

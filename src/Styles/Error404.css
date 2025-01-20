@@ -1,0 +1,23 @@
+.Error-404{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.Error-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    border-radius: 10px;
+}
+.Error-cont > h1{
+    font-size: 70px;
+    color:  rgb(0, 9, 55);
+}
+.Error-cont > span{
+    color: rgb(33, 53, 109);
+}

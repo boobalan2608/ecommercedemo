@@ -16,7 +16,7 @@ const AdminSignUp = () => {
     function AddAdminData(){
         useEffect(() => {
             function fetchAdminData() {
-                let res =  axios.get(`https://ecommercedemodata-1.onrender.com/AdminInfo/${adminName}`);
+                let res =  axios.get(`https://ecommercedemodata-1.onrender.com/AdminInfo?adminName=${adminName}`);
                 let data =  res.data;
                 console.log(data);
                 setAdminData(data);

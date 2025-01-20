@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link,useNavigate } from 'react-router-dom';
 import '../Styles/AdminSignup.css';
 import axios from 'axios';
+import { toast } from "react-toastify";
 // import { Button } from "bootstrap";
 const AdminSignUp = () => {
     let [adminName, setAdminname] = useState("");
@@ -14,7 +15,7 @@ const AdminSignUp = () => {
     function AddAdminData(){
         axios.post("https://ecommercedemodata-1.onrender.com/AdminInfo",data)
         .then((res)=>{
-            alert("Admin Added Successfully")
+            toast.success("Admin Added Successfully")
             setTimeout(() => {
                 navigate("/adminlogin")
             }, 1000);

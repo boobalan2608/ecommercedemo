@@ -10,6 +10,7 @@ const AdminLogin = () => {
         async function fetchAdminData() {
             let res = await fetch("https://ecommercedemodata-1.onrender.com/AdminInfo");
             let data = await res.json();
+            console.log(data);
             setAdminData(data);
         }
         fetchAdminData();

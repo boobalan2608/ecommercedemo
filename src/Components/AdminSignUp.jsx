@@ -11,7 +11,7 @@ const AdminSignUp = () => {
     console.log(password);
     let data = {adminName,password,name};
     function AddAdminData(){
-        axios.post("http://localhost:1212/AdminInfo",data)
+        axios.post("https://ecommercedemodata-1.onrender.com/AdminInfo",data)
         .then((res)=>{
             alert("Admin Added Successfully")
         })

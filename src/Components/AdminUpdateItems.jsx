@@ -15,7 +15,7 @@ export default function AdminUpdateItems() {
     let params = useParams();
     console.log(params.id);
     useEffect(() => {
-        axios.get(`http://localhost:1212/AdminAddProucts/${params.id}`)
+        axios.get(`https://ecommercedemodata-1.onrender.com/AdminAddProucts/${params.id}`)
             .then((res) => {
                 console.log(res.data);
                 setCategory(res.data.category);
@@ -33,7 +33,7 @@ export default function AdminUpdateItems() {
     let data = { category, name, desc, rating, price, image };
     function updateItems(e) {
         e.preventDefault();
-        axios.put(`http://localhost:1212/AdminAddProucts/${params.id}`, data)
+        axios.put(`https://ecommercedemodata-1.onrender.com/AdminAddProucts/${params.id}`, data)
             .then(() => {
                 toast.success("Product Updated Successfully")
             })

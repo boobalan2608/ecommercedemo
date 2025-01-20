@@ -16,7 +16,7 @@ export default function AdminAddProducts() {
 
     function addItems(e) {
         e.preventDefault() ;
-        axios.post("http://localhost:1212/AdminAddProucts", data)
+        axios.post("https://ecommercedemodata-1.onrender.com/AdminAddProducts", data)
             .then((res) => {
                 console.log(res);
                 toast.success("Product added Successfully");

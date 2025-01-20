@@ -11,7 +11,7 @@ export default function UserCart() {
 
     useEffect(() => {
         function fetchData() {
-            axios.get("http://localhost:1212/UserCart")
+            axios.get("https://ecommercedemodata-1.onrender.com/UserCart")
                 .then((res) => {
                     console.log(res.data);
                     setProduct(res.data);
@@ -24,7 +24,7 @@ export default function UserCart() {
     }, [force])
 
     function deleteItem(id) {
-        axios.delete(`http://localhost:1212/UserCart/${id}`);
+        axios.delete(`https://ecommercedemodata-1.onrender.com/UserCart/${id}`);
         setForce(force + 1);
         toast.error("Deleted Sucessfully");
     }

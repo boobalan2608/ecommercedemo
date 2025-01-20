@@ -12,7 +12,7 @@ export default function AdminShoppingList() {
 
     useEffect(() => {
         function fetchData() {
-            axios.get("http://localhost:1212/AdminAddProucts")
+            axios.get("https://ecommercedemodata-1.onrender.com/AdminAddProucts")
                 .then((res) => {
                     console.log(res.data);
                     setProduct(res.data);
@@ -28,7 +28,7 @@ export default function AdminShoppingList() {
         navigate(`/adminhome/AdminUpdateItems/${id}`)
     }
     function deleteItem(id){
-        axios.delete(`http://localhost:1212/AdminAddProucts/${id}`);
+        axios.delete(`https://ecommercedemodata-1.onrender.com/AdminAddProucts/${id}`);
         setForce(force+1);
         toast.error("Deleted Sucessfully");
     }

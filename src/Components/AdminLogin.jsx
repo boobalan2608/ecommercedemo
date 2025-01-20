@@ -8,7 +8,7 @@ const AdminLogin = () => {
     let [Admindata, setAdminData] = useState([]);
     useEffect(() => {
         async function fetchAdminData() {
-            let res = await fetch("http://localhost:1212/AdminInfo");
+            let res = await fetch("https://ecommercedemodata-1.onrender.com/AdminInfo");
             let data = await res.json();
             setAdminData(data);
         }

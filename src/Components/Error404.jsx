@@ -9,6 +9,7 @@ export default function Error404() {
     <meta http-equiv="refresh" content="0; URL=./index.html" />
 </head>
 <body>
+    hello
 </body>
 </html>
 

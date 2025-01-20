@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link,useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from 'react-router-dom';
 import '../Styles/AdminSignup.css';
 import axios from 'axios';
 import { toast } from "react-toastify";
@@ -8,37 +8,17 @@ const AdminSignUp = () => {
     let [adminName, setAdminname] = useState("");
     let [password, setPassword] = useState("");
     let [name, setName] = useState("");
-    let [adminData, setAdminData] = useState([]);
     console.log(adminName);
     console.log(password);
     let data = {adminName,password,name};
-    let navigate = useNavigate();
     function AddAdminData(){
-        useEffect(() => {
-            function fetchAdminData() {
-                let res =  axios.get(`https://ecommercedemodata-1.onrender.com/AdminInfo?adminName=${adminName}`);
-                let data =  res.data;
-                console.log(data);
-                setAdminData(data);
-            }
-            fetchAdminData();
-        },[])
-        if(adminData){
-            toast.error("Admin name is already Exist ! Choose New one")
-        }
-        else{
-
             axios.post("https://ecommercedemodata-1.onrender.com/AdminInfo",data)
             .then((res)=>{
                 toast.success("Admin Added Successfully")
-                setTimeout(() => {
-                    navigate("/adminlogin")
-                }, 1000);
             })
             .catch((err)=>{
                 alert(err);
             })
-        }
     }
     return (
         <div className="admin-signup">

@@ -22,16 +22,16 @@ export default function UserShoppingCart() {
         fetchData();
     }, [force])
     async function addToCart(id) {
-        let res = await axios.get(`http://localhost:1212/AdminAddProucts/${id}`)
+        let res = await axios.get(`https://ecommercedemodata-1.onrender.com/AdminAddProucts/${id}`)
         let {name,category,price,desc,image,rating} = res.data;
         
         toast.success("Product Added Successfully")
 
         let data = { name, category, price, desc, image, rating }
-        let result = await axios.post("http://localhost:1212/UserCart",data);
+        let result = await axios.post("https://ecommercedemodata-1.onrender.com/UserCart",data);
     }
     function deleteItem(id) {
-        axios.delete(`http://localhost:1212/AdminAddProucts/${id}`);
+        axios.delete(`https://ecommercedemodata-1.onrender.com/AdminAddProucts/${id}`);
         setForce(force + 1);
         toast.error("Deleted Sucessfully");
     }

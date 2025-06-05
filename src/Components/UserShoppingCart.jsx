@@ -10,7 +10,7 @@ export default function UserShoppingCart() {
     let [force, setForce] = useState(0);
     useEffect(() => {
         function fetchData() {
-            axios.get("http://localhost:1212/AdminAddProucts")
+            axios.get("https://ecommercedemodata-1.onrender.com/AdminAddProucts")
                 .then((res) => {
                     console.log(res.data);
                     setProduct(res.data);

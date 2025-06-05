@@ -11,7 +11,7 @@ const UserLogin = ()=> {
 
     useEffect(() => {
         async function fetchAdminData() {
-            let res = await fetch("http://localhost:1212/UserInfo");
+            let res = await fetch("https://ecommercedemodata-1.onrender.com/UserInfo");
             let data = await res.json();
             setUserData(data);
         }

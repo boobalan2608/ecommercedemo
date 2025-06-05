@@ -13,7 +13,7 @@ const UserSignUp = () => {
     let data = {userName,password,name};
     let navigate = useNavigate();
     function AddAdminData(e){
-        axios.post("http://localhost:1212/UserInfo",data)
+        axios.post("https://ecommercedemodata-1.onrender.com/UserInfo",data)
         .then((res)=>{
             e.preventDefault();
             toast.success("Registerd Successfully ! Redirecting...")
